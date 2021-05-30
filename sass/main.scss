@@ -1,0 +1,48 @@
+@import "abstracts/variables";
+@import "abstracts/animations";
+
+@import "base/base";
+
+@import "components/shareButtons";
+@import "components/buttons";
+@import "components/wave-shapes";
+
+////////////////// FRONT PAGE ////////////////////
+
+@import "pages/frontpage/header";
+@import "pages/frontpage/offshore";
+@import "pages/frontpage/overview";
+@import "pages/frontpage/services";
+@import "pages/frontpage/about";
+@import "pages/frontpage/positions";
+@import "pages/frontpage/blog";
+
+/////////////////////////////////////////
+
+@import "pages/pricing";
+@import "pages/our-process";
+@import "pages/about";
+@import "pages/blog";
+@import "pages/single";
+@import "pages/contact";
+@import "pages/achive";
+@import "pages/terms";
+@import "pages/privacy";
+@import "pages/error404";
+
+
+//////////
+
+@import "base/typography";
+
+@import "layout/header";
+@import "layout/footer";
+
+
+
+
+
+
+
+
+

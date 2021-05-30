@@ -1,0 +1,36 @@
+.archive-main {
+    
+    max-width: 95rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 12rem;
+
+    &-header {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        height: 13rem;
+        margin-bottom: 8rem;
+        &__container {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: column;
+            &__title {
+                font-family: inherit;
+                font-size: 4rem;
+                color: $color-alt;
+                font-weight: 600;
+                text-align: center;
+            }
+            &__sub {
+                font-size: 1.3rem;
+                font-family: inherit;  
+                line-height: 1.45;
+                font-weight: 300;
+                color: rgba(23,44,62,.75);
+                text-shadow: none;
+                text-align: center;
+            }
+            }
+        }
+    }

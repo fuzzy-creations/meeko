@@ -1,0 +1,172 @@
+//// TEXT LOAD IN ANIMATION ////
+
+@keyframes withLoadUpAnimation {
+  0% {
+    transform: translateY(10rem);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.withLoadUpAnimation {
+  animation-name: withLoadUpAnimation;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+
+
+@keyframes withLoadRightAnimation {
+  0% {
+    transform: translateX(-10rem);
+    opacity: 0;
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.withLoadRightAnimation {
+  animation-name: withLoadRightAnimation;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+
+//////////////////// BLUR ANIMATION /////////////////
+
+.withBlurInAnimation {
+  animation-name: withBlurInAnimation;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes withBlurInAnimation {
+  0% {
+    filter: blur(0.5rem);
+  }
+
+  100% {
+    filter: blur(0rem);
+  }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Menu Item Variables
+// The number of items in the menu
+$menu-items: 3;
+// We multiply it by 1% to get the correct % unit
+$width: (100/$menu-items) * 1%;
+
+// Colors
+$background-color: #fff;
+
+// The hover indicator
+.with-indicator {
+  // The menu is "relative" to the absolute position last-child pseudo elements.
+  position: relative;
+
+  .about-ukraine__box--headers__item:last-child {
+    &:before, &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      transition: all 1.3s ease;
+    }
+
+    // The block that sits behind the text
+    &:before {
+      width: 0;
+      height: 0;
+      top: 0;
+      left: -50px;
+      // Fix the offset - may vary per use
+      display: inline-block;
+      border-right: 3px solid $color-main;
+      border-bottom: 3px solid $color-main;
+      width: 10px; height: 10px;
+      transform: rotate(-45deg);
+      border-radius: 1px;
+    }
+
+  }
+}
+
+////////////
+
+
+// Menu Item Variables
+// The number of items in the menu, plus one for offset
+$menu-items: 3;
+// The actual number of items in the menu
+$menu-items-loop-offset: $menu-items - 1;
+// We multiply it by 1% to get the correct % unit
+$width: (100/$menu-items) * 1%;
+
+/////////////// STAGE 2 ////////////////////////////
+
+
+.with-indicator .about-ukraine__box--headers__item:nth-child(1).about-ukraine__box--headers__item-active ~ .about-ukraine__box--headers__item:last-child:before {
+  top: 10%;
+}
+.with-indicator .about-ukraine__box--headers__item:nth-child(2).about-ukraine__box--headers__item-active ~ .about-ukraine__box--headers__item:last-child:before {
+  top: 40%;
+}
+.with-indicator .about-ukraine__box--headers__item:nth-child(3).about-ukraine__box--headers__item-active:before {
+  top: 75%;
+}
+
+
+///////////////////////////////////////// STAGE 3 //////////////////////////////////
+
+
+.with-indicator .about-ukraine__box--headers__item:nth-child(1):hover ~ .about-ukraine__box--headers__item:last-child:before {
+  top: 10% !important;
+}
+.with-indicator .about-ukraine__box--headers__item:nth-child(2):hover ~ .about-ukraine__box--headers__item:last-child:before {
+  top: 40% !important;
+}
+.with-indicator .about-ukraine__box--headers__item:nth-child(3):hover:before {
+  top: 75% !important;
+}
+
+//make sure the last-child talks to itself
+.about-ukraine__box--headers__item {
+  &:last-child {
+    &:hover, &.about-ukraine__box--headers__item-active {
+      &:before {
+        top: 75% !important;
+      }
+    }        
+  }
+}
+
+

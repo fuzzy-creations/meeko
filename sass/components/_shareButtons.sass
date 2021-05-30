@@ -1,0 +1,79 @@
+.share-wrapper
+   display: flex
+   justify-content: flex-end
+   align-items: center
+   position: relative
+   border-radius: 5px
+   
+   .shareButton.main
+      .share, .close, .check
+         position: absolute
+         top: 1rem
+         left: 1rem
+         transition: all 150ms
+
+      .share, &.open .close, &.sent .check
+         transform: rotate(0) scale(1)
+         opacity: 1
+
+      .close, &.open .share, .check, &.sent .share
+         opacity: 0
+         transform: rotate(90deg) scale(0)
+      
+.shareButton, .shareButton.open
+   border: none
+   border-radius: 50%
+   background: #ff6688
+   color: #fff
+   font-size: 2rem
+   padding: 1rem
+   overflow: hidden
+   outline: none
+   margin: 0.5rem
+   cursor: pointer
+   width: 24px
+   height: 24px
+   box-sizing: content-box
+   transition: all 200ms
+   position: relative
+   opacity: 1
+   transform: scale(1)
+   box-shadow: 0 0 0 rgba(0,0,0,0)
+
+   &:hover
+      transform: scale(1.1) translateY(-3px)
+      box-shadow: 0 3px 6px rgba(0,0,0,0.25)
+   &:active
+      
+   svg
+      display: block
+      fill: #FFF
+      width: 24px
+      height: 24px
+      opacity: 1
+      transition: all 150ms
+      transform: scale(1)
+      
+.fb, .shareButton.open.ig
+   transition-delay: 100ms
+.tw, .shareButton.open.tw
+   transition-delay: 50ms
+.li, .shareButton.open.fb  
+   transition-delay: 0ms
+   
+.fb, .tw, .li
+   width: 0
+   height: 0
+   overflow: hidden
+   padding: 0
+   margin: 0
+   opacity: 0
+   transform: scale(0)
+   svg
+      width: 0
+      height: 0
+      opacity: 0
+      transform: scale(0)
+
+.shareButton__link
+    color: #fff !important

@@ -1,0 +1,376 @@
+.about-title {
+    margin: 0 auto;
+    width: 75%;
+    font-size: 4rem;
+    color: $color-alt;
+    margin-top: 3rem;
+    &__color {
+        color: $color-main;
+    }
+}
+
+.about-header {
+    position: relative;
+    overflow: hidden;
+    width: 90%;
+    height: 36rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    padding: 0 8rem;
+    background-color: $color-main;
+    @media (max-width: 900px){ 
+        grid-template-columns: 1fr;
+        width: 100%;
+        }    
+
+    &__text {
+        width: 100%;
+        height: 70%;
+        color: #fff;
+        font-family: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 2rem;      
+        &__main {
+            font-size: 1.7rem;
+            font-weight: 300;
+            position: relative;
+            &__icon {
+                position: absolute;
+                opacity: 0.3;
+                font-size: 9rem;
+                bottom: 0;
+                right: 50px;
+                color: rgb(212, 212, 212);
+            }
+        }
+        &__mission {
+            font-size: 4rem;
+        }
+    }
+
+    
+    &__image-wrapper {     
+        display: grid;
+        @media (max-width: 900px){ 
+            display: none;
+        }
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-areas: "image1 image2 . image3"
+                                ". . image4 ."
+                                ". image5 . image6"
+                                "image7 . image8 ."
+                                ". image9 . .";
+        &__image {
+            background-color: #fff;
+            height: auto;
+            width: auto;
+            border-radius: 100px;
+            border: 2px solid #eeeeee;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+            &-1{grid-area: image1; height: 9rem; width: 9rem; align-self: center;}
+            &-2{grid-area: image2; height: 5rem; width: 5rem; align-self: center; justify-self: flex-end;}
+            &-3{grid-area: image3; height: 7rem; width: 7rem;}
+            &-4{grid-area: image4; height: 4rem; width: 4rem;}
+            &-5{grid-area: image5; height: 8rem; width: 8rem; align-self: center;}
+            &-6{grid-area: image6; height: 11rem; width: 11rem;}
+            &-7{grid-area: image7; height: 6rem; width: 6rem;}
+            &-8{grid-area: image8; height: 5rem; width: 5rem; align-self: center;}
+            &-9{grid-area: image9; height: 4rem; width: 4rem;}
+        }
+    }
+}
+
+.about-main {
+    width: 80%;
+    margin: 0 auto;
+    @media (max-width: 950px){ 
+        width: 100%;
+        }
+    &__header {
+        font-size: 3.5rem;
+        font-weight: 300;
+        font-family: inherit;
+        color: $color-alt;
+        margin-bottom: 3rem;
+        width: 65%;
+        text-align: center;
+        margin: 0 auto;
+        @media (max-width: 900px){ 
+            width: 85%;
+            }
+        &__underline {
+            border-bottom: 2px solid $color-main;
+        }
+    }
+    &__header-alt {
+        font-size: 3.5rem;
+        font-weight: 300;
+        font-family: inherit;
+        color: $color-alt;
+        margin-bottom: 3rem;
+    }
+}
+
+
+.about-values {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;   
+    &__banner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 5rem;
+        flex-basis: 40vh;
+        @media (max-width: 800px){ 
+            grid-template-columns: 1fr;
+            width: 70%;
+            margin: 0 auto;
+            row-gap: 2rem;
+            }
+        &--item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            grid-template-rows: 50px 1fr;
+            align-items: center;      
+            max-height: 20rem;    
+            &__icon {
+                grid-column: 1 / 2;
+                color: $color-main;
+                font-size: 3rem;
+            }
+            &__header {
+                grid-column: 2 / 3;
+                font-size: 2.2rem;
+                font-weight: 500;
+                color: $color-alt;
+                text-transform: uppercase;
+            }
+            &__text {
+                grid-column: 1 / 3;
+            }
+        }
+    }
+}
+
+.about-meeko {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    font-family: inherit;
+    min-height: 50rem;
+    @media (max-width: 800px){ 
+        grid-template-columns: 1fr;
+        }
+    &__image {
+        width: 100%;
+        height: 100%;
+           & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }    
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        background-color: #f7f7f7f7;
+        padding: 8rem;
+        &__header {
+            margin-bottom: 5rem;
+            &__sub {
+                border-bottom: 2px solid $color-main;
+            }
+        }
+        &__text {
+            & p {
+                margin-top: 1rem;
+                &:first-child {
+                    margin-top: 0rem;
+                }
+            }
+        }
+    }
+}
+
+
+.about-ukraine {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    //row-gap: 10rem;
+    &__box {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: minmax(20rem, auto);
+        column-gap: 2rem;
+        margin-top: 10rem;
+        @media (max-width: 900px){ 
+            padding: 0 3rem;
+            }
+        &--selector {
+            grid-column: 1 / 2;
+            &__icon {
+                font-size: 2rem;
+                color: $color-main;
+            }
+        }
+
+        &--headers {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            list-style: none;
+            &__item {
+                font-size: 2rem;
+                cursor: pointer;
+                color: $color-alt;
+                height: 100%;
+                &-active {
+                    & span { color: $color-main; }
+                    & span i { display: block !important; }
+                }
+                &--text {
+                    grid-column: 2 / 3;
+                    &__title {
+                        margin-bottom: 0.5rem;
+                        font-weight: 400;
+                    }
+                    &__sub {
+                        font-size: 1.2rem;
+                        color: #555555 !important;
+                        font-weight: 300;
+                    }
+                }
+                &--icon {
+                    display: none;
+                    color: $color-main;
+                }             
+            }
+        }
+        &--content {
+            &-1 {
+                display: block;
+            }
+            &-2 {
+                display: none;
+            }
+            &-3 {
+                display: none;
+            }
+                    
+            &__header {
+                font-size: 3rem;
+                color: $color-alt;
+                margin-bottom: 2rem;
+            }
+            &__text {
+               line-height: 1.6 !important;
+            }
+        }
+    }
+}
+
+
+.about-story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    font-family: inherit;
+    min-height: 50rem;
+    @media (max-width: 800px){ 
+        grid-template-columns: 1fr;
+        }
+    &__image {
+        width: 100%;
+        height: 100%;
+       & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        background-color: #f7f7f7f7;
+        padding: 8rem;
+        &__header {
+            &__sub {
+                border-bottom: 2px solid $color-main;
+            }
+        }
+        &__text {
+            & p:first-child {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+.about-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    @media (max-width: 420px){ 
+        padding-bottom: 8rem;
+    }
+    &__button {
+        margin-top: 8rem;
+    }
+
+    &__images {
+        margin-bottom: 10rem;
+        margin-top: 10rem;
+       display: grid;
+       @media (max-width: 420px){ 
+        display: none;
+    }
+       justify-content: center;
+       width: 80%;
+       grid-template-columns: repeat(7, 1fr);
+       grid-template-rows: repeat(2, 1fr);
+       grid-template-areas: ". image2 image4 image6 image6 image8 image10"
+                            "image1 image3 image4 image5 image7 image8 image9";
+
+
+        &--bubble {
+            background-color: #fff;
+            border: 2px solid $color-main;
+            height: 4rem;
+            width: 4rem;
+            border-radius: 100px;
+            box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2);
+            background-size: cover;
+            background-position: center;
+            &-1 {grid-area: image1; width: 10rem; height: 10rem;}
+            &-2 {grid-area: image2;}
+            &-3 {grid-area: image3; justify-self: center;}
+            &-4 {grid-area: image4; align-self: center; justify-self: center; width: 12rem; height: 12rem;}
+            &-5 {grid-area: image5; justify-self: center;}
+            &-6 {grid-area: image6; justify-self: center; width: 6rem; height: 6rem;}
+            &-7 {grid-area: image7; width: 7rem; height: 7rem;}
+            &-8 {grid-area: image8; width: 9rem; height: 9rem;}
+            &-9 {grid-area: image9; width: 5rem; height: 5rem;}
+            &-10 {grid-area: image10; justify-self: center;}
+        }
+    }
+}
+
+///////////

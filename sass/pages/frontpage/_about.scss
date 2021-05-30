@@ -1,0 +1,80 @@
+
+
+.section-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5rem;
+    padding: 5rem 15rem;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    align-content: center;
+    align-items: center;
+    position: relative;
+ 
+    @media (max-width: 900px){ 
+     grid-template-columns: 1fr;
+     height: auto;
+     padding: 8rem 5rem;
+ 
+     }
+ 
+    &__left {
+        align-self: center;
+        &__top {
+            margin-bottom: 2rem;
+        }
+        &__title {
+            font-family: inherit;
+            font-size: 3rem;
+            color: $color-alt;
+             font-weight: 600;
+             margin-bottom: 6rem;
+         }
+         &__image {
+             justify-self: center;
+              @media (max-width: 900px){ 
+                     display: flex;
+                     justify-content: center;
+                     align-self: center;
+                 }   
+             & img {
+                 width: 90%;
+                 height: auto;
+                  @media (max-width: 900px){ 
+                     width: 55%;
+                     justify-self: center;
+                     align-self: center;
+                 }   
+             }
+         }
+    }
+ 
+    &__right {
+        align-self: center;
+         &__header {
+             font-family: inherit;
+             font-size: 4rem;
+             color: $color-alt;
+             font-weight: 600;
+             margin-bottom: 2rem;
+         }
+        &__content {
+             font-size: 1.6rem;
+             font-family: inherit;  
+             line-height: 1.45;
+             font-weight: 300;
+             color: rgba(23,44,62,.75);
+             text-shadow: none;
+             & p {
+                 margin-top: 1rem;
+             }
+             & p:first-child {
+                 margin-top: 0rem;
+             }
+        }
+        &__button {
+            margin-top: 2rem;
+        }
+    }
+ 
+ }

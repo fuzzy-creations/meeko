@@ -1,0 +1,254 @@
+.process-wrapper {
+//    width: 90%;
+//    margin: 0 auto;
+}
+
+.process-header {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    margin: 0 auto;
+    width: 90%;
+    @media (max-width: 640px){ 
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    &__main {
+        display: grid;
+        grid-template-rows: 0.5fr 25px auto;
+        &__title {
+            font-size: 6rem;
+            line-height: 1;
+            align-self: flex-end;
+            color: $color-alt;
+            &__colour {
+                color: $color-main;
+            }
+        }
+        &__sub {
+            font-size: 1.3rem;
+            color: $color-alt;
+            margin-bottom: 2rem;
+            padding: 0 7px;
+        }
+        &__text {
+            font-size: 1.4rem !important;
+            &--header {
+                font-weight: 500;
+                margin-right: 1rem;
+            }
+        }
+
+    }
+
+    &__image {
+        @media (max-width: 770px){ 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        & img {
+            width: 80%;
+            background: none !important;
+            border: none !important;
+        }
+    }
+}
+
+// .process-info {
+//     width: 100%;
+//     height: 30rem;
+//     background-color: #f7f7f7;
+//     &__main {
+//         width: 80%;
+//         margin: 0 auto;
+//         display: flex;
+//         justify-content: space-evenly;
+//     }
+// }
+
+.process-steps {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-color: #fff;
+    &__header {
+        font-size: 45px;
+        margin-bottom: 10px;
+        line-height: 1;
+        font-family: "Motiva Sans", Sans-serif;
+        font-weight: bold;
+        text-transform: none;
+        letter-spacing: normal;
+        text-align: center;
+        color: $color-alt;
+    }
+    &__sub {
+        font-size: 20px;
+        width: 375px;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: "Motiva Sans", Sans-serif;
+        font-weight: 300;
+        text-align: center;
+        color: $color-alt;
+    }
+
+}
+
+.process-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 40px auto 70px;
+    max-width: 105rem;
+}
+
+.process-item {
+    width: 30%;
+    margin: 20px 1.5% 0;
+    cursor: pointer;
+    @media (max-width: 800px){ 
+        width: 47%;
+    }
+    @media (max-width: 550px){ 
+        width: 100%;
+    }
+    &__icon {
+        background: rgba(62, 62, 62, .15);
+        background-image: none;
+        margin: 0 auto -42px;
+        border-radius: 50%;
+        width: 85px;
+        height: 85px;
+        transition: all 600ms ease;
+        overflow: hidden;
+        position: relative;
+        
+        & i {
+            font-size: 4rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            z-index: 9;
+            position: relative;
+        }
+        &:after {
+            background-image: linear-gradient(to right, #fda7ba, $color-main);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            content: "";
+            opacity: 0;
+            transition: opacity 600ms ease;
+        }
+    }
+    &__content {
+        background: transparent;
+        border-radius: 30px;
+        padding: 50px 10px 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        height: calc( 100% - 50px );
+        transition: all 600ms ease;
+        &__header {
+            font-family: "Motiva Sans", Sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: $color-alt;
+            text-transform: capitalize;
+            position: relative;
+            &--number {
+                color: #555555;
+                opacity: 0.3;
+                position: absolute;
+                left: 5%;
+                transition: all 150ms ease;
+            }
+        }
+        &__text {
+            text-align: center;
+        }
+        &__arrow {
+            //visibility: hidden;
+            opacity: 0;
+            transition: all 150ms ease;
+            color: $color-main;
+            display: block;
+            font-size: 14px;
+            text-align: center;
+            text-transform: capitalize;
+            margin-top: 1rem;
+            line-height: 1;
+            &:after {
+                margin-left: 5px;
+                width: 40px;
+                display: inline-block;
+                text-align: left;
+                transition: all 150ms ease-out;
+                content: "➜";
+                cursor: pointer;
+                position: absolute;
+            }
+            &:hover:after {
+                transform: translateX(10px);
+            }
+        }
+        &__arrow--final {
+            //visibility: hidden;
+            opacity: 0;
+            transition: all 150ms ease;
+            color: $color-main;
+            display: block;
+            font-size: 14px;
+            text-align: center;
+            text-transform: capitalize;
+            margin-top: 1rem;
+            line-height: 1;
+
+            & i {
+                color: #ff6688;
+            }
+        }
+    }
+    
+}
+
+.process-item:hover .process-item__icon:after {
+    opacity: 1;
+}
+.process-item:hover .process-item__icon {
+    // opacity: 0;
+}
+.process-item:hover .process-item__content__header--number {
+   color: $color-main;
+   opacity: 0.9;
+}
+
+.process-item:hover .process-item__content {
+    background: rgba(62, 62, 62, 0.05);
+};
+
+.process-item:hover .process-item__content__arrow {
+    //visibility: visible;
+    opacity: 1;
+}
+.process-item:hover .process-item__content__arrow--final {
+    //visibility: visible;
+    opacity: 1;
+}
+
+
+
+.process-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 8rem 0;
+}

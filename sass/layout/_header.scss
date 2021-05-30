@@ -1,0 +1,120 @@
+.nav {
+    width: 100%;
+    height: 7vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    z-index: 10;
+    @media (max-width: 520px){ 
+        grid-template-columns: 1.5fr 5fr;
+    }
+    &__menu {
+        width: 100%;
+        font-size: 1.3rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: 'Roboto', sans-serif;
+    }
+    &__logo {
+        text-align: center;
+        img {
+            width: 8rem;
+            height: auto;
+        }
+    }
+}
+
+.nav-white {
+    background-color: #fff;
+}
+
+.nav__search {
+    @media (max-width: 520px){ 
+        display: none;
+    }
+}
+
+.nav-white .menu-main-menu-container .primary-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    text-decoration: none;
+    & li {
+        margin: 0 2rem;
+        border-bottom: 1px solid transparent;
+        @media (max-width: 520px){ 
+            margin: 0 0.7rem;
+        }
+        & a {
+            text-decoration: none;
+            color: $color-alt;
+        }
+        &:hover {
+            border-bottom: 1px solid $color-main;
+        }
+    }
+    & .current_page_item, .current-menu-ancestor {
+        border-bottom: 1px solid $color-main;
+        & a {
+             color: $color-main !important;
+         }   
+    }
+}
+
+.nav-contact {
+    background-color: $color-main;
+}
+
+.nav-contact .menu-main-menu-container .primary-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    text-decoration: none;
+    & li {
+        margin: 0 2rem;
+        border-bottom: 1px solid transparent;
+        @media (max-width: 520px){ 
+            margin: 0 1rem;
+        }
+        & a {
+            text-decoration: none;
+            color: #fff;
+        }
+        &:hover {
+            border-bottom: 1px solid #fff;
+        }
+    }
+    & .current_page_item, .current-menu-ancestor {
+        border-bottom: 1px solid #fff;
+        transition: all 0.2s ease-in;
+        & a {
+             color: #fff !important;
+         }   
+    }
+}
+
+.nav-contact .menu-main-menu-container .primary-menu li:hover ~ .current_page_item {
+    border-bottom: 1px solid transparent;
+}
+
+
+
+////////////////////////////////////////
+
+.nav-sticky {
+    position: fixed;
+    top: 0.5rem;
+    left: 0;
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 2px #efefef;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+
+

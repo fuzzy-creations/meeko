@@ -1,0 +1,12 @@
+.terms {
+    //background-color: #fafafa;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    &-page {
+        width: 80%;
+        margin: 0 auto;
+        & h1, h2, h3, h4, h5, p {
+            margin-bottom: 2rem;
+        }
+    }
+}
